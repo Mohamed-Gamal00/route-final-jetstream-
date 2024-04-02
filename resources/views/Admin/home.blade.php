@@ -1,1 +1,5 @@
-<h1>admin</h1>
+@extends('Admin.layout')
+
+@section('body')
+@include('Admin.partials.body')
+@endsection

@@ -28,6 +28,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('redirect',[HomeController::class,'redirect']);
+Route::get('redirect',[HomeController::class,'redirect'])->name('redirect');
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 
