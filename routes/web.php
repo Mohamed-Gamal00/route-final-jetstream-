@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,20 +30,22 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('redirect',[HomeController::class,'redirect'])->name('redirect');
+Route::get('redirect', [HomeController::class, 'redirect'])->name('redirect');
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-Route::controller(ProductController::class)->group(function() {
-    Route::get('products',"allProducts");
-    Route::get('products/details/{id}',"details")->name('details');
+Route::controller(ProductController::class)->group(function () {
 
-    Route::get('products/create',"create");
-    Route::post('products',"store")->name('store');
+    Route::middleware(IsAdmin::class)->group(function () {
+        Route::get('products', "allProducts");
+        Route::get('products/details/{id}', "details")->name('details');
 
-    Route::get('products/edit/{id}',"edit");
-    Route::post('products/{id}',"update")->name('update');
+        Route::get('products/create', "create");
+        Route::post('products', "store")->name('store');
 
-    Route::post('product/delete/{id}',"delete")->name('delete');
+        Route::get('products/edit/{id}', "edit");
+        Route::post('products/{id}', "update")->name('update');
 
+        Route::post('product/delete/{id}', "delete")->name('delete');
+    });
 });
