@@ -36,7 +36,7 @@ class ProductController extends Controller
         Product::create($data);
 
         //redirect
-        return redirect(url("products/create"));
+        return redirect(url("products"));
     }
 
     public function details($id)

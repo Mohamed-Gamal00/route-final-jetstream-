@@ -74,11 +74,11 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url("products/create") }}">
+            <a class="nav-link" href="{{ url("categories") }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Create Product</span>
+              <span class="menu-title">Categories</span>
             </a>
           </li>
         </ul>

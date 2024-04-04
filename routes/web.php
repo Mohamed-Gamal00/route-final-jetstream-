@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\IsAdmin;
@@ -47,5 +48,20 @@ Route::controller(ProductController::class)->group(function () {
         Route::post('products/{id}', "update")->name('update');
 
         Route::post('product/delete/{id}', "delete")->name('delete');
+    });
+});
+
+Route::controller(CategoryController::class)->group(function () {
+    Route::middleware(IsAdmin::class)->group(function () {
+        Route::get('categories', "allCategories");
+        Route::get('categories/details/{id}', "details")->name('category-details');
+
+        Route::get('category/create', "create");
+        Route::post('categories', "store")->name('category-store');
+
+        Route::get('categories/edit/{id}', "edit");
+        Route::post('categories/{id}', "update")->name('category-update');
+
+        Route::post('category/delete/{id}', "delete")->name('category-delete');
     });
 });

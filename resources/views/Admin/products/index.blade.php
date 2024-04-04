@@ -5,6 +5,13 @@
 
 
 
+    <a class="btn btn-outline-info mb-lg-5" href="{{ url('products/create') }}">
+        <span class="menu-icon">
+            <i class="mdi mdi-speedometer"></i>
+        </span>
+        <span class="menu-title">Create New Product</span>
+    </a>
+
 
     <table class="table">
         <thead>
@@ -28,7 +35,7 @@
                     <td>{{ $product->desc }}</td>
                     <td><img src="{{ asset("storage/$product->image") }}" width="100px" alt="" srcset=""></td>
                     <td>
-                        <a class="btn btn-outline-success " href="{{ route('details',$product->id) }}">show</a>
+                        <a class="btn btn-outline-success " href="{{ route('details', $product->id) }}">show</a>
                     </td>
                 </tr>
             @endforeach
