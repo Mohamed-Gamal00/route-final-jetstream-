@@ -57,7 +57,7 @@
           <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
           </li>
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items mb-2">
             <a class="nav-link" href="{{url( "redirect") }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
@@ -65,7 +65,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items mb-2">
             <a class="nav-link" href="{{ url("products") }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
@@ -73,7 +73,7 @@
               <span class="menu-title">All Products</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items mb-2">
             <a class="nav-link" href="{{ url("categories") }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
