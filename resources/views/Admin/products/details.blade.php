@@ -20,9 +20,9 @@
                             <a href="{{url("products/edit/$product->id")}}" class="btn  btn-outline-success mr-3 "> edit
                             </a>
 
-                            <form class="mx-2" action="{{ url("product/delete/$product->id") }}" method="post">
+                            <form class="mx-2" action="{{ route("product-delete",$product->id) }}" method="post">
                                 @csrf
-                                {{-- @method('DELETE') --}}
+                                @method('DELETE')
                                 <button type="submit" class="btn btn-outline-danger ">delete</button>
                             </form>
                         </div>

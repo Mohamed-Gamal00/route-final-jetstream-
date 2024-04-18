@@ -12,7 +12,11 @@
         <span class="menu-title">Create New Product</span>
     </a>
 
-
+    @if (Session::has('success'))
+        <div class="alert alert-success text-center" role="alert">
+            {{ Session::get('success') }}
+        </div>
+    @endif
     <table class="table">
         <thead>
             <tr>

@@ -38,7 +38,7 @@ Route::get('redirect', [HomeController::class, 'redirect'])->name('redirect');
 Route::controller(ProductController::class)->group(function () {
 
     Route::middleware(IsAdmin::class)->group(function () {
-        Route::get('products', "allProducts");
+        Route::get('products', "allProducts")->name('products');
         Route::get('products/details/{id}', "details")->name('details');
 
         Route::get('products/create', "create");
@@ -47,13 +47,13 @@ Route::controller(ProductController::class)->group(function () {
         Route::get('products/edit/{id}', "edit");
         Route::post('products/{id}', "update")->name('update');
 
-        Route::post('product/delete/{id}', "delete")->name('delete');
+        Route::delete('products/delete/{id}', "delete")->name('product-delete');
     });
 });
 
 Route::controller(CategoryController::class)->group(function () {
     Route::middleware(IsAdmin::class)->group(function () {
-        Route::get('categories', "allCategories");
+        Route::get('categories', "allCategories")->name('categories');
         Route::get('categories/details/{id}', "details")->name('category-details');
 
         Route::get('category/create', "create");

@@ -75,10 +75,10 @@ class ProductController extends Controller
 
     public function delete($id)
     {
+
         $product = Product::findOrFail($id);
         Storage::delete($product->image);
         $product->delete();
-        $products = Product::all();
-        return view('Admin.products.index', compact("products"))->with('success','data deleted succefully');
+        return redirect()->route('products')->with('success','data deleted succefully');
     }
 }

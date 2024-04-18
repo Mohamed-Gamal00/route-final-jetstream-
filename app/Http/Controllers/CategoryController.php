@@ -62,6 +62,8 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
         $categories = Category::all();
-        return view('Admin.categories.index', compact("categories"))->with('success','data deleted succefully');
+        return redirect()->route('categories');
+
+        // return view('Admin.categories.index', compact("categories"))->with('success','data deleted succefully');
     }
 }

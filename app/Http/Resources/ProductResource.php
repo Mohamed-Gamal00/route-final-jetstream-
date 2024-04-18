@@ -15,13 +15,14 @@ class ProductResource extends JsonResource
     public function toArray(Request $request): array
     {
         // return parent::toArray($request);
+        // API ده خاص بال
         return [
             "product_id"=>$this->id,
             "name"=>$this->name,
             "desc"=>$this->desc,
             "price"=>$this->price,
             "quantity"=>$this->quantity,
-            "image"=>asset("storage")."/".$this->image,
+            "image"=>asset("storage/".$this->image),
         ];
     }
 }
